@@ -1,0 +1,70 @@
+<ion-view view-title="Settings">
+	<ion-content>
+		<!-- Bible Version Picker || Life Journal -->
+		<ion-item>
+			<h2 class="padding-bottom">Bible Version:</h2>
+			<ion-radio ng-repeat="item in bibleList"
+						ng-value="item.value"
+						ng-model="settings.bibleVersion"
+						ng-change="versionChange(item)"
+				 		name="bible">
+				{{item.text}}
+			</ion-radio>
+		</ion-item>
+
+		<!-- WOJ Red Text || Life Journal -->
+		<ion-item>
+			<h2 class="padding bottom">Red Text:</h2>
+			<ion-radio	ng-repeat="item in redTextList"
+						ng-value="item.value"
+						ng-model="settings.redText"
+						ng-change="redTextChange(item)">
+				{{item.text}}
+			</ion-radio>
+		</ion-item>
+
+		<!-- Font Size || Life Journal -->
+		<ion-item class="button-bar">
+			<h2 class="padding-right">Font Size: {{settings.fontSize}}</h2>
+			<a class="button" ng-click="increaseFont(false)">-</a>
+			<a class="button" ng-click="increaseFont(true)">+</a>
+		</ion-item>
+
+		<!-- Media Type || Podcasts -->
+		<ion-item>
+			<h2 class="padding-bottom">Podcast Type:</h2>
+			<ion-radio ng-repeat="item in mediaList"
+					ng-value="item.value"
+					ng-model="settings.mediaType"
+					ng-change="mediaChange(item)"
+					name="media">
+				{{item.text}}
+			</ion-radio>
+		</ion-item>
+
+
+		<!-- On / Off || Notifications -->
+		<ion-item>
+			<h2 class="padding-bottom">Notifications</h2>
+			<ion-radio ng-repeat="item in notificationList"
+					ng-value="item.value"
+					ng-model="settings.notification"
+					ng-change="notificationChange(item)"
+					name="notification">
+				{{item.text}}
+			</ion-radio>
+		</ion-item>
+
+		<!-- Time Picker || Notifications -->
+		<ion-item>
+			<h2 class="padding-bottom">Notification Time</h2>
+			<ionic-timepicker input-obj="timePickerObject">
+				<button class="button button-block button-positive overflowShow">
+					{{notificationTimeString}}
+					<standard-time-meridian etime='timePickerObject.inputEpochTime'></standard-time-meridian>
+				</button>
+			</ionic-timepicker>
+		</ion-item>
+
+	</ion-content>
+</ion-view>

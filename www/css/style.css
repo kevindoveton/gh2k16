@@ -1,0 +1,177 @@
+/* NOTES */
+/*  */
+
+/* CSS Imports */
+@import url('fonts.css');
+
+
+/*Images*/
+.home-content {
+	background: #f9f959;
+				-webkit-background-size: cover;
+}
+
+.heading-image {
+	width: 100%;
+}
+
+/*Text Formatting*/
+.center{
+	text-align: center;
+}
+
+.justify{
+	text-align: justify;
+}
+
+.tBlack {
+	color: black !important;
+}
+
+h1 {
+	font-family: 'opensans-regular';
+}
+
+h2 {
+	font-family: 'opensans-light';
+}
+
+h3 {
+	font-family: 'opensans-regular';
+
+}
+
+h4 {
+	font-family: 'opensans-light';
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+
+p
+{
+	font-family: 'opensans-light';
+}
+
+.noDecoration
+{
+	text-decoration: none;
+}
+
+a:visited, a:link, a:active, a:hover
+{
+	color: white;
+}
+
+/*Nav Bars*/
+.bar.bar-positive {
+	border-color: #5ba880;
+	background-color: #5ba880;
+	background-image: none;
+}
+
+
+/*Side Menu*/
+.side-menu{
+	background-color: rgb(137, 201, 175);
+}
+
+.side-menu h1 {
+	color: black !important;
+	font-size: 30px !important;
+	font-family: 'opensans-light' !important;
+}
+
+.side-menu i {
+	color: black !important;
+}
+
+
+.side-menu .item-content{
+	background-color: rgb(137, 201, 175);
+}
+
+.borderless {
+	border: none;
+}
+
+.menu-title{
+	/*color: #444;*/
+}
+
+.black-text {
+	color: black;
+}
+
+.item-content i {
+	color: #fff;
+	font-family: 'opensans-light';
+}
+
+.icon {
+	font-size: 20px;
+}
+
+/* Podcasts */
+.podcast-description {
+	padding: 0 0 3% 3%;
+}
+
+.podcast-image{
+	width:20px;
+}
+
+/* Podcast Player */
+.centerme {
+	position: relative;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.fullscreen-player {
+	height: 100vh;
+	width: 100%;
+	left: 0;
+}
+
+/* Podcast */
+.button {
+	min-width: 100px;
+}
+
+.auto-margin {
+	margin: 0 auto;
+}
+
+.bottom {
+	bottom: 0;
+	position: absolute;
+}
+
+
+
+/* Settings Menu */
+.button-bar h2{
+	display: -webkit-inline-flex;
+			-webkit-align-items: center;
+}
+
+
+/* Connect */
+/*input[type=text], select {*/
+	/*border: 1px solid;*/
+/*}*/
+
+
+/* Backgrounds */
+.transparent {
+	background: transparent !important;
+}
