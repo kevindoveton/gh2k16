@@ -1,13 +1,26 @@
-<!-- 
-TODO: background image
+<!--
+	Home Page
+	5 or more events depending on size of screen, most popular trending
 -->
 
-
-
 <ion-view view-title="Home">
-  <ion-content class="home-content" scroll="false">
-  	<h1>Home Page</h1>
-  	<p>5 or more events depending on size of screen, most popular trending</p>
-    
-  </ion-content>
+	<ion-content class="home-content" scroll="false">
+		
+		<!-- This will eventually be dynamic -->
+		<ion-item href="#/app/events/{{$index}}">
+			<h2> Item 1 </h2>
+			<h3>Subtitle</h3>
+		</ion-item>
+
+		<ion-item href="#/app/events/{{$index}}">
+			<h2> Item 2 </h2>
+			<h3>Subtitle</h3>
+		</ion-item>
+
+		<ion-item href="#/app/events/{{$index}}">
+			<h2> Item 3 </h2>
+			<h3>Subtitle</h3>
+		</ion-item>
+
+	</ion-content>
 </ion-view>

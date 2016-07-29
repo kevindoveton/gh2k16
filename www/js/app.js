@@ -82,65 +82,39 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic-t
 		controller: 'AppCtrl'
 	})
 
-	.state('app.podcast_menu', {
-		url: '/podcasts',
+	
+
+
+	// .state('app.life_journal', {
+	// 	url: '/life_journal',
+	// 	views: {
+	// 		'menuContent': {
+	// 			templateUrl: 'templates/life_journal.html'
+	// 		}
+	// 	}
+	// })
+
+	// .state('app.reading', {
+	// 	url: '/life_journal/:id',
+	// 	views: {
+	// 		'menuContent': {
+	// 			templateUrl: 'templates/reading.html',
+	// 			controller: 'ReadingCtrl'
+	// 		}
+	// 	}
+	// })
+
+	.state('app.eventPage', {
+		url: '/eventPage',
 		views: {
 			'menuContent': {
-				templateUrl: 'templates/podcasts_menu.html',
-				controller: 'PodcastMenuCtrl'
+				templateUrl: 'templates/eventPage.html',
+				controller: 'EventPageCtrl'
 			}
 		}
 	})
 
-	.state('app.podcast', {
-		url: '/podcasts/:id',
-		views: {
-			'menuContent': {
-				templateUrl: 'templates/podcast.html',
-				controller: 'PodcastCtrl'
-			}
-		}
-	})
-
-
-	.state('app.life_journal', {
-		url: '/life_journal',
-		views: {
-			'menuContent': {
-				templateUrl: 'templates/life_journal.html'
-			}
-		}
-	})
-
-	.state('app.reading', {
-		url: '/life_journal/:id',
-		views: {
-			'menuContent': {
-				templateUrl: 'templates/reading.html',
-				controller: 'ReadingCtrl'
-			}
-		}
-	})
-
-	.state('app.connect', {
-		url: '/connect',
-		views: {
-			'menuContent': {
-				templateUrl: 'templates/connect.html',
-				controller: 'connectCtrl'
-			}
-		}
-	})
-
-	.state('app.settings', {
-		url: '/settings',
-		views: {
-			'menuContent': {
-				templateUrl: 'templates/settings.html',
-				controller: 'SettingsCtrl'
-			}
-		}
-	})
+	
 
 	.state('app.home', {
 		url: '/home',
@@ -151,16 +125,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic-t
 			}
 		}
 	})
-
-	.state('app.todayReading', {
-		url: '/todayReading/id',
-		views: {
-			'menuContent': {
-				templateUrl: 'templates/reading.html',
-				controller: 'ReadingCtrl'
-			}
-		}
-	});
 
 	// if none of the above states are matched, use this as the fallback
 	$urlRouterProvider.otherwise('/app/home');
