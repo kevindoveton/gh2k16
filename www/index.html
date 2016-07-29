@@ -1,29 +1,65 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html>
-<!--
-  * Please see the included README.md file for license terms and conditions.
-  -->
-<head>
-    <title>Blank Cordova Mobile App Project Template (Lite)</title>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<!-- TODO: make more secure -->
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'"> -->
 
-    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <style>
-        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
-        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
-        @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
-        @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
-    </style>
+		<title></title>
 
-    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
-    <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
-    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
-</head>
+		<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/radiofix.css" rel="stylesheet">
 
-<body>
+		<!-- ionic/angularjs js -->
+		<script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <p>Hello, Cordova!</p>
+		<!-- Fixes -->
+		<!-- <script src="js/fixes/ionradiofix.js"></script> -->
 
-</body>
+		<!-- parse -->
+		<!-- <script src="js/parse/parse.js"></script>
+		<script>
+			Parse.initialize(
+			"TIVUxUw9dQlo6u9KaqgCC0MoC8yO2SZVyqBHdY8y",
+			"4LVO0GDynCOVM7ME4WlAWWSaHq9pI7UE1WYU9du9");
+		</script> -->
+		<!-- Parse removed june 16 2016 -->
+
+		<!-- your app's js -->
+		<script src="js/app.js"></script>
+
+		<!-- Factories / Services -->
+		<script src="js/factories/threeDeeTouch.js"></script>
+		<script src="js/factories/localStorage.js"></script>
+		<script src="js/factories/notificationService.js"></script>
+		<script src="js/factories/readingService.js"></script>
+		<script src="js/factories/settingsService.js"></script>
+
+		<!-- Controllers -->
+		<script src="js/controllers/controllers.js"></script>
+		<script src="js/controllers/appCtrl.js"></script>
+		<script src="js/controllers/home.js"></script>
+		<script src="js/controllers/lifeJournal.js"></script>
+		<script src="js/controllers/podcast.js"></script>
+		<script src="js/controllers/podcastMenu.js"></script>
+		<script src="js/controllers/reading.js"></script>
+		<script src="js/controllers/connect.js"></script>
+		<script src="js/controllers/settings.js"></script>
+
+
+		<!-- Time picker -->
+		<script src="lib/ionic-timepicker/dist/ionic-timepicker.bundle.min.js"></script>
+
+		<!-- Cordova -->
+		<script src="lib/cordova/ng-cordova.js"></script>
+		<script src="lib/cordova/ng-cordova-mocks.js"></script>
+		<script src="cordova.js"></script>
+	</head>
+
+	<body ng-app="starter">
+		<ion-nav-view></ion-nav-view>
+	</body>
+
 </html>

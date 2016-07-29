@@ -1,50 +1,167 @@
-/*
- * Please see the included README.md file for license terms and conditions.
- */
+// Ionic Starter App
+
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+// 'starter.controllers' is found in controllers.js
+angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic-timepicker'])
+
+.config(function($httpProvider, $sceProvider)
+{
+	$httpProvider.interceptors.push(function($rootScope){
+		return {
+			request: function(config) {
+				$rootScope.$broadcast('loading:show')
+			return config
+			},
+
+			response: function(response) {
+				$rootScope.$broadcast('loading:hide')
+			return response
+			}
+		}
+	})
+	$sceProvider.enabled(false);
+})
 
 
-// This file is a suggested starting place for your code.
-// It is completely optional and not required.
-// Note the reference that includes it in the index.html file.
+
+.run(function($ionicPlatform, $rootScope, $ionicLoading, $window, QuickActionService, $cordovaGoogleAnalytics)
+{
+	$ionicPlatform.ready(function() {
+		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+		// for form inputs)
+		if (window.cordova && window.cordova.plugins.Keyboard) {
+			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+			cordova.plugins.Keyboard.disableScroll(true);
+		}
+
+		if (window.StatusBar) {
+			// org.apache.cordova.statusbar required
+			StatusBar.styleDefault();
+		}
+		// 3D touch
+		QuickActionService.configure();
+
+		// Tracking
+		if (typeof analytics !== 'undefined') {
+			// get devices uuid
+			var uuid = device.uuid;
+			console.log(uuid);
+
+			analytics.debugMode();
+			analytics.startTrackerWithId('UA-61041772-3');
+			analytics.setUserId(uuid);
+		}
+
+	});
+
+	//Loading indicators and callbacks
+	$rootScope.$on('loading:show', function() {
+		$ionicLoading.show({
+			template: '<ion-spinner></ion-spinner>'
+		});
+		// $ionicLoading.show({template:'hey'});
+	})
+
+	$rootScope.$on('loading:hide', function() {
+		$ionicLoading.hide();
+	})
+})
 
 
-/*jslint browser:true, devel:true, white:true, vars:true */
-/*global $:false, intel:false app:false, dev:false, cordova:false */
+
+/*===========   Routes    ===========*/
+.config(function($stateProvider, $urlRouterProvider) {
+	$stateProvider
+
+	.state('app', {
+		url: '/app',
+		abstract: true,
+		templateUrl: 'templates/menu.html',
+		controller: 'AppCtrl'
+	})
+
+	.state('app.podcast_menu', {
+		url: '/podcasts',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/podcasts_menu.html',
+				controller: 'PodcastMenuCtrl'
+			}
+		}
+	})
+
+	.state('app.podcast', {
+		url: '/podcasts/:id',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/podcast.html',
+				controller: 'PodcastCtrl'
+			}
+		}
+	})
 
 
-// For improved debugging and maintenance of your app, it is highly
-// recommended that you separate your JavaScript from your HTML files.
-// Use the addEventListener() method to associate events with DOM elements.
+	.state('app.life_journal', {
+		url: '/life_journal',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/life_journal.html'
+			}
+		}
+	})
 
-// For example:
+	.state('app.reading', {
+		url: '/life_journal/:id',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/reading.html',
+				controller: 'ReadingCtrl'
+			}
+		}
+	})
 
-// var el ;
-// el = document.getElementById("id_myButton") ;
-// el.addEventListener("click", myEventHandler, false) ;
+	.state('app.connect', {
+		url: '/connect',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/connect.html',
+				controller: 'connectCtrl'
+			}
+		}
+	})
 
+	.state('app.settings', {
+		url: '/settings',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/settings.html',
+				controller: 'SettingsCtrl'
+			}
+		}
+	})
 
+	.state('app.home', {
+		url: '/home',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/home.html',
+				controller: 'HomeCtrl'
+			}
+		}
+	})
 
-// The function below is an example of the best way to "start" your app.
-// This example is calling the standard Cordova "hide splashscreen" function.
-// You can add other code to it or add additional functions that are triggered
-// by the same event or other events.
+	.state('app.todayReading', {
+		url: '/todayReading/id',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/reading.html',
+				controller: 'ReadingCtrl'
+			}
+		}
+	});
 
-function onAppReady() {
-    if( navigator.splashscreen && navigator.splashscreen.hide ) {   // Cordova API detected
-        navigator.splashscreen.hide() ;
-    }
-}
-document.addEventListener("app.Ready", onAppReady, false) ;
-// document.addEventListener("deviceready", onAppReady, false) ;
-// document.addEventListener("onload", onAppReady, false) ;
-
-// The app.Ready event shown above is generated by the init-dev.js file; it
-// unifies a variety of common "ready" events. See the init-dev.js file for
-// more details. You can use a different event to start your app, instead of
-// this event. A few examples are shown in the sample code above. If you are
-// using Cordova plugins you need to either use this app.Ready event or the
-// standard Crordova deviceready event. Others will either not work or will
-// work poorly.
-
-// NOTE: change "dev.LOG" in "init-dev.js" to "true" to enable some console.log
-// messages that can help you debug Cordova app initialization issues.
+	// if none of the above states are matched, use this as the fallback
+	$urlRouterProvider.otherwise('/app/home');
+});
