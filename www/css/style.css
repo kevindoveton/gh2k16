@@ -7,8 +7,8 @@
 
 /*Images*/
 .home-content {
-	background: #f9f959;
-				-webkit-background-size: cover;
+	background:#f0f0f0;
+	-webkit-background-size: cover;
 }
 
 .heading-image {
@@ -72,14 +72,14 @@ a:visited, a:link, a:active, a:hover
 /*Nav Bars*/
 .bar.bar-positive {
 	border-color: #5ba880;
-	background-color: #5ba880;
+	background-color: #f0f0f0;
 	background-image: none;
 }
 
 
 /*Side Menu*/
 .side-menu{
-	background-color: rgb(137, 201, 175);
+	background-color: #fff;
 }
 
 .side-menu h1 {
@@ -94,7 +94,7 @@ a:visited, a:link, a:active, a:hover
 
 
 .side-menu .item-content{
-	background-color: rgb(137, 201, 175);
+	background-color: #fff;
 }
 
 .borderless {
@@ -174,4 +174,39 @@ a:visited, a:link, a:active, a:hover
 /* Backgrounds */
 .transparent {
 	background: transparent !important;
+}
+
+
+/*
+OVERWRITING IONIC DEFAULTS
+*/
+
+.bar.bar-positive .title {
+    color: #1c1c1c;
+}
+.item-complex, a.item.item-complex, button.item.item-complex {
+    padding: 0;
+    margin: 15px;
+}
+.bar-positive .button.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #1c1c1c;
+    font-size: 17px;
+}
+ h2 {
+	color:#1c1c1c;
+	font-weight:bold !important;
+	font-family:'Lato', sans-serif;
+	letter-spacing:3px;
+	margin-left:3px;
+	font-size:1em !important;
+	padding-bottom:8px;
+}
+h3 {
+	color:#1c1c1c;
+	font-size:0.8em !important;
+	letter-spacing:1px;
+	text-transform: uppercase;
 }
