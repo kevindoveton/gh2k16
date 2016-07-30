@@ -91,7 +91,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic-t
 			}
 		}
 	})
-
 	
 
 	.state('app.home', {

@@ -25,7 +25,7 @@ angular.module('starter').factory('dataService', function($http, $localstorage)
 				return items;
 			});
 			
-			// console.log(promise);
+			console.log(promise);
 			return promise;
 			}
 		};
@@ -34,7 +34,7 @@ angular.module('starter').factory('dataService', function($http, $localstorage)
 	
 })
 
-angular.module('starter').factory('dataService', function($http, $localstorage)
+angular.module('starter').factory('weatherService', function($http, $localstorage)
 {
 	//TODO: Cache - just for this session.
 	
