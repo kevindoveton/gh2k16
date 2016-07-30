@@ -45,36 +45,32 @@ angular.module('starter').factory('weatherService', function($http, $localstorag
 	var weatherService = {
 		
 		async: function() {
-			var item = {};
+			var items = [];
 			var promise = $http.get('https://www.familycentre.org.au/cfcapp/?q=ftp://ftp.bom.gov.au/anon/gen/fwo/IDS10034.xml').then(function (response)
 			{
-				// var $xml = $($.parseXML(response.data));
-			
-				// $xml.find("area[aac='SA_PT001']").each(function() {
-				// 	var $this = $(this);
-					
-				// 	$this.find("forecast-period").each(function() {
-	   // 		     		var $this = $(this);
-				// 		console.log($this.find("start-time-local").text())
-	   // 		     		item = {
-				// 			date: $this.find("start-time-local").text(),
-				// 			precis: $this.find("precis").text(), 
-				// 			airMax: $this.find("air_temperature_maximum").text(),
-				// 		}
-				// 		console.log(item);
-				// 	});
+				
 					var x2js = new X2JS();
 					var data = JSON.parse(JSON.stringify(x2js.xml_str2json(response.data)));
-					return (data.product.forecast.area[3]);
+					
+					data.product.forecast.area[3]['forecast-period'].forEach( function (arrayItem)
+					{
+						var item = {
+							date: arrayItem['_start-time-local'],
+							maxTemp: arrayItem['element'][0]['__text'],
+							precis: arrayItem['text'][0]['__text'],
+						};
+						// console.log(item);
+						// console.log(data.product.forecast.area[3]['forecast-period']);
+						items.push(item);
+					});
+
+					return items;
+					// return (data.product.forecast.area[3]['forecast-period']);
 					
 				});
-				// console.log(items)
-				
 				return promise;
 			}
 			
-			// console.log(promise);
-			// return promise;
 			};
 			return weatherService;
 

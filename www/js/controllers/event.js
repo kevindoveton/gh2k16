@@ -3,16 +3,30 @@ angular.module('starter.controllers').controller('EventCtrl', function($ionicPla
 	
 	dataService.async().then(function(d) {
 		$scope.data = d[$stateParams.id];
-		console.log($scope.data.date);
+		
 		var date = new Date($scope.data.date);
-		$scope.date = (date.toDateString());
+		$scope.date = (date);
 
 
 	});
 
 	weatherService.async().then(function(d) {
-		// $scope.data = d[$stateParams.id];
-		$scope.weather = '';
+		console.log($scope.data);
+		var weatherPrecis = "No Weather Available";
+		var weatherTemp = "";
+		d.forEach( function (arrayItem)
+		{
+			var weatherDate = arrayItem['date'].split("T")[0];
+			var eventDate = $scope.data['date'].split("T")[0];
+
+				if (weatherDate === eventDate)
+				{
+					weatherPrecis = arrayItem['precis'];
+					weatherTemp = arrayItem['maxTemp'];
+				}
+		});
+		$scope.weatherPrecis = weatherPrecis;
+		$scope.weatherTemp = weatherTemp;
 	});
 	
 	
