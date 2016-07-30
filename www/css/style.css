@@ -261,7 +261,7 @@ input[type="text"] {
 	z-index: -1;
 	
 	display: block;
-	background-image: url('../img/festival.jpg');
+	background-image: url('../img/arts & culture.jpg');
 	background-position:center;
 	/*width: calc(100% - 35px);*/
 	width:100%;
@@ -274,7 +274,7 @@ input[type="text"] {
 	-ms-filter: brightness(.5);
 	filter: brightness(.5);
 }
-.category-link-leisure .icon p::before {
+.category-link-film .icon p::before {
 	content: "";
 	position: absolute;
 	/*margin:-30px;*/
@@ -283,7 +283,7 @@ input[type="text"] {
 	z-index: -1;
 	
 	display: block;
-	background-image: url('https://hd.unsplash.com/photo-1445307806294-bff7f67ff225');
+	background-image: url('../img/film.jpg');
 	background-position:center;
 	/*width: calc(100% - 35px);*/
 	width:100%;
@@ -296,7 +296,7 @@ input[type="text"] {
 	-ms-filter: brightness(.5);
 	filter: brightness(.5);
 }
-.category-link-sport .icon p::before {
+.category-link-splash .icon p::before {
 	content: "";
 	position: absolute;
 	/*margin:-30px;*/
@@ -305,7 +305,7 @@ input[type="text"] {
 	z-index: -1;
 	
 	display: block;
-	background-image: url('https://hd.unsplash.com/photo-1451256656121-9ffc0c898a49');
+	background-image: url('../img/splash.jpg');
 	background-position:center;
 	/*width: calc(100% - 35px);*/
 	width:100%;
@@ -328,7 +328,122 @@ input[type="text"] {
 	z-index: -1;
 	
 	display: block;
-	background-image: url('https://hd.unsplash.com/photo-1420661664115-fe1746ebe671');
+	background-image: url('../img/community.jpg');
+	background-position:center;
+	/*width: calc(100% - 35px);*/
+	width:100%;
+	height: 100px;
+	background-size:cover;
+	
+	-webkit-filter: brightness(.5);
+	-moz-filter: brightness(.5);
+	-o-filter: brightness(.5);
+	-ms-filter: brightness(.5);
+	filter: brightness(.5);
+}
+
+.category-link-history .icon p::before {
+	content: "";
+	position: absolute;
+	/*margin:-30px;*/
+	top:0;
+	left:0;
+	z-index: -1;
+	
+	display: block;
+	background-image: url('../img/history.jpg');
+	background-position:center;
+	/*width: calc(100% - 35px);*/
+	width:100%;
+	height: 100px;
+	background-size:cover;
+	
+	-webkit-filter: brightness(.5);
+	-moz-filter: brightness(.5);
+	-o-filter: brightness(.5);
+	-ms-filter: brightness(.5);
+	filter: brightness(.5);
+}
+
+.category-link-live-music .icon p::before {
+	content: "";
+	position: absolute;
+	/*margin:-30px;*/
+	top:0;
+	left:0;
+	z-index: -1;
+	
+	display: block;
+	background-image: url('../img/live music.jpg');
+	background-position:center;
+	/*width: calc(100% - 35px);*/
+	width:100%;
+	height: 100px;
+	background-size:cover;
+	
+	-webkit-filter: brightness(.5);
+	-moz-filter: brightness(.5);
+	-o-filter: brightness(.5);
+	-ms-filter: brightness(.5);
+	filter: brightness(.5);
+}
+
+.category-link-food .icon p::before {
+	content: "";
+	position: absolute;
+	/*margin:-30px;*/
+	top:0;
+	left:0;
+	z-index: -1;
+	
+	display: block;
+	background-image: url('../img/food.jpg');
+	background-position:center;
+	/*width: calc(100% - 35px);*/
+	width:100%;
+	height: 100px;
+	background-size:cover;
+	
+	-webkit-filter: brightness(.5);
+	-moz-filter: brightness(.5);
+	-o-filter: brightness(.5);
+	-ms-filter: brightness(.5);
+	filter: brightness(.5);
+}
+
+.category-link-events .icon p::before {
+	content: "";
+	position: absolute;
+	/*margin:-30px;*/
+	top:0;
+	left:0;
+	z-index: -1;
+	
+	display: block;
+	background-image: url('../img/event.jpg');
+	background-position:center;
+	/*width: calc(100% - 35px);*/
+	width:100%;
+	height: 100px;
+	background-size:cover;
+	
+	-webkit-filter: brightness(.5);
+	-moz-filter: brightness(.5);
+	-o-filter: brightness(.5);
+	-ms-filter: brightness(.5);
+	filter: brightness(.5);
+}
+
+.category-link-exhibitions .icon p::before {
+	content: "";
+	position: absolute;
+	/*margin:-30px;*/
+	top:0;
+	left:0;
+	z-index: -1;
+	
+	display: block;
+	background-image: url('../img/exhibition.jpg');
 	background-position:center;
 	/*width: calc(100% - 35px);*/
 	width:100%;
