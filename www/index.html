@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 		<!-- TODO: make more secure -->
-		<!-- <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'"> -->
+		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
 
 		<title></title>
 
@@ -14,18 +14,10 @@
 
 		<!-- ionic/angularjs js -->
 		<script src="lib/ionic/js/ionic.bundle.js"></script>
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.jfeed.pack.js"></script>
 		<!-- Fixes -->
 		<!-- <script src="js/fixes/ionradiofix.js"></script> -->
-
-		<!-- parse -->
-		<!-- <script src="js/parse/parse.js"></script>
-		<script>
-			Parse.initialize(
-			"TIVUxUw9dQlo6u9KaqgCC0MoC8yO2SZVyqBHdY8y",
-			"4LVO0GDynCOVM7ME4WlAWWSaHq9pI7UE1WYU9du9");
-		</script> -->
-		<!-- Parse removed june 16 2016 -->
 
 		<!-- your app's js -->
 		<script src="js/app.js"></script>
@@ -42,7 +34,7 @@
 		<script src="js/controllers/appCtrl.js"></script>
 		<script src="js/controllers/home.js"></script>
 		<script src="js/controllers/eventPage.js"></script>
-
+		<script src="js/controllers/allEvents.js"></script>
 
 		<!-- Time picker -->
 		<script src="lib/ionic-timepicker/dist/ionic-timepicker.bundle.min.js"></script>
