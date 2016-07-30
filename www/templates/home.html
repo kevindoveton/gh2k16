@@ -24,6 +24,12 @@
 			<h2> Big Day Out </h2>
 			<h3> music/culture </h3>
 		</ion-item>
+		<ion-item ng-repeat="d in data" href="#/app/events/{{$index}}">
+			<h2>{{d.title}}</h2>
+			<h3>{{d.description}}
+		</ion-item>
+
+
 
 	</ion-content>
 </ion-view>

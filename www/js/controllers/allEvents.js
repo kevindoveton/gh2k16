@@ -6,7 +6,7 @@ dataService, settingsService) {
 
 $.get('./whatsOn.xml', function(data) {
 	var $xml = $(data);
-
+	var items = []
 	$xml.find("item").each(function() {
 		var $this = $(this),
         	item = {
@@ -16,6 +16,7 @@ $.get('./whatsOn.xml', function(data) {
 				date: $this.find("date").text(),
 				imageUrl: $this.find("image").find("url").text(),
 			}
-			console.log(item);
+			items.push(item);
     });
+    return items
 });
