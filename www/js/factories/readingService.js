@@ -8,8 +8,6 @@ angular.module('starter').factory('dataService', function($http, $localstorage)
 		async: function() {
 			var items = [];
 			var promise = $.get('../../whatsOn.xml', function(data) {
-				
-				
 			}).then(function (response)
 			{
 				var $xml = $(response);
