@@ -42,25 +42,31 @@ angular.module('starter').factory('weatherService', function($http, $localstorag
 	var weatherService = {
 		
 		async: function() {
-			var items = [];
+			var item = {};
 			var promise = $http.get('http://clients.kdoveton.com/govhack/?q=ftp://ftp.bom.gov.au/anon/gen/fwo/IDS10034.xml', function(data) {
 			}).then(function (response)
 			{
-				var $xml = $(response);
+				var $xml = $(response.data);
 				$xml.find("area").each(function() {
-					var $this = $(this),
-			        	item = {
-							date: $this.find("air_temperature_maximum").text(),
-							// description: $this.find("description").text(),
-							// link: $this.find("link").text(),
-							// date: $this.find("date").text(),
-							// imageUrl: $this.find("image").find("url").text(),
-						}
-						console.log(item);
-					items.push(item);
+					var $this = $(this);
+					console.log($($this.parent()[0].innerHTML).find("SA_PT001")[0].outerHTML);
+					console.log("------");
+						// if $($this.parent()[0].innerHTML).find("SA_PT001")
+						// {
+						// 	console.log("suc");
+			   // 		     	item = {
+						// 		date: $this.find("air_temperature_maximum").text(),
+						// 		// description: $this.find("description").text(),
+						// 		// link: $this.find("link").text(),
+						// 		// date: $this.find("date").text(),
+						// 		// imageUrl: $this.find("image").find("url").text(),
+						// 	}
+						// }
+					
 				});
 				// console.log(items)
-				return items;
+				
+				return item;
 			});
 			
 			// console.log(promise);
