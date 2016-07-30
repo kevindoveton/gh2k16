@@ -246,7 +246,7 @@ input[type="text"] {
 	padding:0;
 }
 .home-content .item-complex {
-	padding:25px;
+	padding:0;
 }
 .category-link .icon p {
 	color:#fff;
@@ -464,6 +464,9 @@ input[type="text"] {
 }
 
 .item-complex .item-content, .item-radio .item-content {
-	background:rgba(238, 238, 238, 0.9);
-	color:#fff !important;
+	background:rgba(0, 0, 0, 0.75);
+}
+
+.category-link h2, .category-link h3 {
+	color:#fff;
 }
