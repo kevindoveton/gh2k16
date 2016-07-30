@@ -469,7 +469,38 @@ input[type="text"] {
 
 .category-link h2, .category-link h3 {
 	color:#fff;
+	text-align:center;
 }
 .event-header {
 	height:50vh;
+}
+
+
+
+		.event-page-wrapper .ng-binding {
+			padding: 5px 15px 5px 15px;
+		}
+		.event-page-wrapper h1 {
+			text-align:center;
+			font-family:'Lato', sans-serif;
+			letter-spacing: 2px;
+		}
+		.event-page-wrapper p {
+			text-align:justify;
+			font-family:'Lato', sans-serif;
+			letter-spacing: 1px;
+		}
+		.event-page-wrapper * {
+			color:#262626;
+		}
+		.event-page-wrapper a {
+			text-align:center;
+			background:#262626;
+			color:#fff;
+			text-decoration:none;
+			display:block;
+			padding:12px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			padding-left:3px;
 }
