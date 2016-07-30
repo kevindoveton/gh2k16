@@ -11,7 +11,7 @@ angular.module('starter').factory('dataService', function($http, $localstorage)
 			var promise = $http.get('https://www.familycentre.org.au/cfcapp/whatsOn.xml').then(function (response)
 			{
 				var $xml = $($.parseXML(response.data));
-				console.log($xml);
+				// console.log($xml);
 				$xml.find("item").each(function() {
 					var $this = $(this),
 			        	item = {
@@ -46,37 +46,37 @@ angular.module('starter').factory('weatherService', function($http, $localstorag
 		
 		async: function() {
 			var item = {};
-			var promise = $http.get('http://clients.kdoveton.com/govhack/?q=ftp://ftp.bom.gov.au/anon/gen/fwo/IDS10034.xml', function(data) {
-			}).then(function (response)
+			var promise = $http.get('https://www.familycentre.org.au/cfcapp/?q=ftp://ftp.bom.gov.au/anon/gen/fwo/IDS10034.xml').then(function (response)
 			{
-				var $xml = $($.parseXML(response.data));
-				$xml.find("area").each(function() {
-					var $this = $(this);
-					console.log($($this.parent()[0].innerHTML).find("SA_PT001")[0].outerHTML);
-					console.log("------");
-						// if $($this.parent()[0].innerHTML).find("SA_PT001")
-						// {
-						// 	console.log("suc");
-			   // 		     	item = {
-						// 		date: $this.find("air_temperature_maximum").text(),
-						// 		// description: $this.find("description").text(),
-						// 		// link: $this.find("link").text(),
-						// 		// date: $this.find("date").text(),
-						// 		// imageUrl: $this.find("image").find("url").text(),
-						// 	}
-						// }
+				// var $xml = $($.parseXML(response.data));
+			
+				// $xml.find("area[aac='SA_PT001']").each(function() {
+				// 	var $this = $(this);
+					
+				// 	$this.find("forecast-period").each(function() {
+	   // 		     		var $this = $(this);
+				// 		console.log($this.find("start-time-local").text())
+	   // 		     		item = {
+				// 			date: $this.find("start-time-local").text(),
+				// 			precis: $this.find("precis").text(), 
+				// 			airMax: $this.find("air_temperature_maximum").text(),
+				// 		}
+				// 		console.log(item);
+				// 	});
+					var x2js = new X2JS();
+					console.log(x2js.xml_str2json(response.data));
 					
 				});
 				// console.log(items)
 				
 				return item;
-			});
+			}
 			
 			// console.log(promise);
-			return promise;
-			}
-		};
+			// return promise;
+			};
+			return weatherService;
 
-	return weatherService;
+	
 	
 })
