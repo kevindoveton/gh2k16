@@ -4,7 +4,7 @@
      </ion-nav-title>
 	<ion-content class="home-content">
 
-		<ion-item menu-close class="borderless background-item" ng-repeat="d in data" href="#/app/event/{{$index}}" style="background-image:url('{{d.imageUrl}}') !important;">
+		<ion-item menu-close class="borderless background-item" ng-repeat="d in data" href="#/app/event/{{d.id}}" style="background-image:url('{{d.imageUrl}}') !important;">
 			<div class='category-link' style='padding:30px;'>
 				<h2 ng-bind-html="d.title"></h2>
 				<h3>{{d.category}}</h3>
