@@ -64,7 +64,7 @@ angular.module('starter').factory('weatherService', function($http, $localstorag
 				// 		console.log(item);
 				// 	});
 					var x2js = new X2JS();
-					console.log(x2js.xml_str2json(response.data));
+					console.log(JSON.stringify(x2js.xml_str2json(response.data)));
 					
 				});
 				// console.log(items)
