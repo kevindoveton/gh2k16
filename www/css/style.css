@@ -7,9 +7,10 @@
 
 /*Images*/
 .home-content {
-	background:#f0f0f0;
-	/*background:linear-gradient(#F8B195, #F67280, #C06C84, #6C5B7B, #355C7D);*/
+	/*background:#f0f0f0;*/
+	background:linear-gradient(#f0f0f0, rgba(246, 114, 128, .2));
 	-webkit-background-size: cover;
+
 }
 
 .heading-image {
@@ -224,6 +225,9 @@ h3 {
 }
 input[type="text"] {
 	color:#A5A5A5;
+	font-style: italic;
+	width:80%;
+	margin-top: -10px;
 }
 ::-webkit-input-placeholder {
    font-style:italic;

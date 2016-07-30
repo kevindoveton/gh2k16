@@ -102,6 +102,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic-t
 		}
 	})
 	
+	.state('app.search', {
+		url: '/search/:name',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/search.html',
+				controller: 'SearchCtrl'
+			}
+		}
+	})
 
 	.state('app.home', {
 		url: '/home',

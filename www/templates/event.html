@@ -2,7 +2,8 @@
 
 		<style>
 		.event-page-wrapper .event-header {
-			background:url("{{data.imageUrl}}"), #41b1c2;
+			background-image:url("{{data.imageUrl}}");
+			background-color:#41b1c2;
 			background-size:cover;
 			background-position:center;
 			background-attachment: fixed;
@@ -24,11 +25,13 @@
 			<div class='event-header' >
 				<div class='gradient-fade-down'></div>
 			</div>
-			<h1>{{data.title}}</h1>
-			<p>{{data.description}}</p>
-			<p>{{data.date}}</p>
+			<h1 ng-bind-html="data.title"></h1>
+			<p ng-bind-html="data.description"></p>
+			<p ng-bind-html="data.date"></p>
 			<!-- <p>{{data.imageUrl}}</p> -->
-			<center><a href='{{data.link}}'>More information</a></center>
+			
+				<a href='{{data.link}}'>More information</a>
+
 			<!-- <p>{{data.category}}</p> -->
 			
 			<!-- <p>Weather</p> -->
