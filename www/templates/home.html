@@ -24,11 +24,17 @@
 			<h2> Big Day Out </h2>
 			<h3> music/culture </h3>
 		</ion-item> -->
-		<ion-item ng-repeat="d in data" href="#/app/event/{{$index}}">
-			<h2>{{d.title}}</h2>
-			<h3>{{d.description}}</h3>
-		</ion-item>
+		<!-- <ion-item ng-repeat="d in data" href="#/app/event/{{$index}}"> -->
+			
+		<!-- </ion-item> -->
 
+
+		<ion-item menu-close href="#/app/eventPage" class="borderless background-item" ng-repeat="d in data" href="#/app/event/{{$index}}" style="background-image:url('{{d.imageUrl}}') !important;">
+			<div class='category-link' style='padding:30px;'>
+				<h2>{{d.title}}</h2>
+				<h3>{{d.category}}</h3>
+			</div>
+		</ion-item>
 
 
 	</ion-content>
