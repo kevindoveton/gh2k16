@@ -91,6 +91,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic-t
 			}
 		}
 	})
+
+	.state('app.categories', {
+		url: '/categories/:name',
+		views: {
+			'menuContent': {
+				templateUrl: 'templates/categories.html',
+				controller: 'CategoriesCtrl'
+			}
+		}
+	})
 	
 
 	.state('app.home', {
