@@ -470,3 +470,6 @@ input[type="text"] {
 .category-link h2, .category-link h3 {
 	color:#fff;
 }
+.event-header {
+	height:50vh;
+}
