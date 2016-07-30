@@ -16,7 +16,7 @@ angular.module('starter').factory('dataService', function($http, $localstorage)
 			        	item = {
 							title: $this.find("image").find("title").text(),
 							description: $this.find("description").text(),
-							link: $this.find("link").text(),
+							link: $($this.find("link")[0]).text(),
 							date: $this.find("date").text(),
 							imageUrl: $this.find("image").find("url").text(),
 							category: $this.find("category").text(),
