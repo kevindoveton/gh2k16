@@ -8,6 +8,7 @@
 /*Images*/
 .home-content {
 	background:#f0f0f0;
+	/*background:linear-gradient(#F8B195, #F67280, #C06C84, #6C5B7B, #355C7D);*/
 	-webkit-background-size: cover;
 }
 
@@ -209,4 +210,134 @@ h3 {
 	font-size:0.8em !important;
 	letter-spacing:1px;
 	text-transform: uppercase;
+}
+.bar {
+	padding:0 !important;
+}
+.item-input {
+	border:none;
+	border-bottom:1px solid #ddd;
+	width: 101%;
+	background:#222;
+	color:#333;
+	padding:30px;
+}
+input[type="text"] {
+	color:#A5A5A5;
+}
+::-webkit-input-placeholder {
+   font-style:italic;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-style:italic;; 
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-style:italic;; 
+}
+.menu-left .has-header {
+	top:61px;
+}
+:-ms-input-placeholder {  
+   font-style:italic;; 
+}
+.item-complex .item-content, .item-radio .item-content {
+	padding:0;
+}
+.home-content .item-complex {
+	padding:25px;
+}
+.category-link .icon p {
+	color:#fff;
+	font-size:1em;
+}
+.category-link-culture .icon p::before {
+	content: "";
+	position: absolute;
+	/*margin:-30px;*/
+	top:0;
+	left:0;
+	z-index: -1;
+	
+	display: block;
+	background-image: url('../img/festival.jpg');
+	background-position:center;
+	/*width: calc(100% - 35px);*/
+	width:100%;
+	height: 100px;
+	background-size:cover;
+	
+	-webkit-filter: brightness(.5);
+	-moz-filter: brightness(.5);
+	-o-filter: brightness(.5);
+	-ms-filter: brightness(.5);
+	filter: brightness(.5);
+}
+.category-link-leisure .icon p::before {
+	content: "";
+	position: absolute;
+	/*margin:-30px;*/
+	top:0;
+	left:0;
+	z-index: -1;
+	
+	display: block;
+	background-image: url('https://hd.unsplash.com/photo-1445307806294-bff7f67ff225');
+	background-position:center;
+	/*width: calc(100% - 35px);*/
+	width:100%;
+	height: 100px;
+	background-size:cover;
+	
+	-webkit-filter: brightness(.5);
+	-moz-filter: brightness(.5);
+	-o-filter: brightness(.5);
+	-ms-filter: brightness(.5);
+	filter: brightness(.5);
+}
+.category-link-sport .icon p::before {
+	content: "";
+	position: absolute;
+	/*margin:-30px;*/
+	top:0;
+	left:0;
+	z-index: -1;
+	
+	display: block;
+	background-image: url('https://hd.unsplash.com/photo-1451256656121-9ffc0c898a49');
+	background-position:center;
+	/*width: calc(100% - 35px);*/
+	width:100%;
+	height: 100px;
+	background-size:cover;
+	
+	-webkit-filter: brightness(.5);
+	-moz-filter: brightness(.5);
+	-o-filter: brightness(.5);
+	-ms-filter: brightness(.5);
+	filter: brightness(.5);
+}
+
+.category-link-community .icon p::before {
+	content: "";
+	position: absolute;
+	/*margin:-30px;*/
+	top:0;
+	left:0;
+	z-index: -1;
+	
+	display: block;
+	background-image: url('https://hd.unsplash.com/photo-1420661664115-fe1746ebe671');
+	background-position:center;
+	/*width: calc(100% - 35px);*/
+	width:100%;
+	height: 100px;
+	background-size:cover;
+	
+	-webkit-filter: brightness(.5);
+	-moz-filter: brightness(.5);
+	-o-filter: brightness(.5);
+	-ms-filter: brightness(.5);
+	filter: brightness(.5);
 }
