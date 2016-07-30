@@ -26,7 +26,7 @@ angular.module('starter').factory('dataService', function($http, $localstorage)
 				return items;
 			});
 			
-			console.log(promise);
+			// console.log(promise);
 			return promise;
 			}
 		};
@@ -39,7 +39,7 @@ angular.module('starter').factory('weatherService', function($http, $localstorag
 {
 	//TODO: Cache - just for this session.
 	
-	var dataService = {
+	var weatherService = {
 		
 		async: function() {
 			var items = [];
@@ -47,17 +47,19 @@ angular.module('starter').factory('weatherService', function($http, $localstorag
 			}).then(function (response)
 			{
 				var $xml = $(response);
-				$xml.find("item").each(function() {
+				$xml.find("area").each(function() {
 					var $this = $(this),
 			        	item = {
-							date: $this.find("area").find("title").text(),
-							description: $this.find("description").text(),
-							link: $this.find("link").text(),
-							date: $this.find("date").text(),
-							imageUrl: $this.find("image").find("url").text(),
+							date: $this.find("air_temperature_maximum").text(),
+							// description: $this.find("description").text(),
+							// link: $this.find("link").text(),
+							// date: $this.find("date").text(),
+							// imageUrl: $this.find("image").find("url").text(),
 						}
+						console.log(item);
 					items.push(item);
 				});
+				// console.log(items)
 				return items;
 			});
 			
@@ -66,6 +68,6 @@ angular.module('starter').factory('weatherService', function($http, $localstorag
 			}
 		};
 
-	return dataService;
+	return weatherService;
 	
 })
