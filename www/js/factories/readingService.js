@@ -64,12 +64,13 @@ angular.module('starter').factory('weatherService', function($http, $localstorag
 				// 		console.log(item);
 				// 	});
 					var x2js = new X2JS();
-					console.log(JSON.stringify(x2js.xml_str2json(response.data)));
+					var data = JSON.parse(JSON.stringify(x2js.xml_str2json(response.data)));
+					return (data.product.forecast.area[3]);
 					
 				});
 				// console.log(items)
 				
-				return item;
+				return promise;
 			}
 			
 			// console.log(promise);

@@ -3,14 +3,19 @@ angular.module('starter.controllers').controller('EventCtrl', function($ionicPla
 	
 	dataService.async().then(function(d) {
 		$scope.data = d[$stateParams.id];
+		console.log($scope.data.date);
+		var date = new Date($scope.data.date);
+		$scope.date = (date.toDateString());
+
+
 	});
 
 	weatherService.async().then(function(d) {
 		// $scope.data = d[$stateParams.id];
-
+		$scope.weather = '';
 	});
 	
-	var dateFormat = '$scope.data.date' ;
+	
 
 	// console.log($stateParams.id);
 

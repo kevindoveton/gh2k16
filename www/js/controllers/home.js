@@ -7,10 +7,10 @@ angular.module('starter.controllers').controller('HomeCtrl', function($ionicPlat
 		$scope.apply;
 	});
 
-	// weatherService.async().then(function(d) {
+	weatherService.async().then(function(d) {
 		// $scope.data = d;
 		// $scope.apply;
-	// });
+	});
 
 	
 
