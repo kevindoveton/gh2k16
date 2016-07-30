@@ -9,13 +9,13 @@ angular.module('starter.controllers').controller('HomeCtrl', function($ionicPlat
 
 	
 
-	var promise = $http.get('http://clients.kdoveton.com/govhack?q=http://www.adelaidecitycouncil.com/whats-on/event/alpine-winter-village-1', function(data) {
-			}).then(function (response)
-			{
-				var html = $.parseHTML(response.data);
-				// console.log()
-				var location = html.find("venue").text();
-				// console.log(html);
-			});
+	// var promise = $http.get('http://clients.kdoveton.com/govhack?q=http://www.adelaidecitycouncil.com/whats-on/event/alpine-winter-village-1', function(data) {
+	// 		}).then(function (response)
+	// 		{
+	// 			var html = $.parseHTML(response.data);
+	// 			// console.log()
+	// 			var location = html.find("venue").text();
+	// 			// console.log(html);
+	// 		});
 
 })
