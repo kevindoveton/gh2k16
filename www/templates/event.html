@@ -1,6 +1,35 @@
   <ion-view view-title="Events">
-	<ion-content class="event-content" scroll="false">
-
+	<ion-content class="event-content" scroll="true">
+	<style>
+		.event-header {
+			background-image:url('{{data.imageUrl}}');
+			background-size:cover;
+			background-position:center;
+			background-attachment: fixed;
+		}
+		.gradient-fade-down {
+			height: 15vh;
+			background: linear-gradient(rgba(255,255,255,0), #fff);
+			bottom: 0;
+			
+			width: 100%;
+			padding-top: 50vh;
+		}
+		.ng-binding {
+			padding: 5px 10px 5px 10px;
+		}
+		h1 {
+			text-align:center;
+			font-family:'Lato', sans-serif;
+			letter-spacing: 2px;
+		}
+		p {
+			text-align:justify;
+		}
+	</style>
+		<div class='event-header'>
+			<div class='gradient-fade-down'></div>
+		</div>
 		<h1>{{data.title}}</h1>
 		<p>{{data.description}}</p>
 		<p>{{data.link}}</p>
