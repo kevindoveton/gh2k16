@@ -6,7 +6,7 @@ angular.module('starter.controllers').controller('EventCtrl', function($ionicPla
 
 	});
 	
-	// var dateFormat = $scope.data.date ;
+	var dateFormat = '$scope.data.date' ;
 
 	// console.log($stateParams.id);
 })
