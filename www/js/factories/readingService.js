@@ -8,7 +8,7 @@ angular.module('starter').factory('dataService', function($http, $localstorage)
 		async: function() {
 			var items = [];
 			
-			var promise = $http.get('https://www.familycentre.org.au/cfcapp/whatsOn.xml').then(function (response)
+			var promise = $http.get('https://www.familycentre.org.au/cfcapp/?q=https://www.familycentre.org.au/cfcapp/whatsOn.xml').then(function (response)
 			{
 				var $xml = $($.parseXML(response.data));
 				// console.log($xml);
