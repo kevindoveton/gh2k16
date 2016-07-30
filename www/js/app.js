@@ -40,19 +40,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic-t
 			// org.apache.cordova.statusbar required
 			StatusBar.styleDefault();
 		}
-		// 3D touch
-		QuickActionService.configure();
+		// // 3D touch
+		// QuickActionService.configure();
 
-		// Tracking
-		if (typeof analytics !== 'undefined') {
-			// get devices uuid
-			var uuid = device.uuid;
-			console.log(uuid);
+		// // Tracking
+		// if (typeof analytics !== 'undefined') {
+		// 	// get devices uuid
+		// 	var uuid = device.uuid;
+		// 	console.log(uuid);
 
-			analytics.debugMode();
-			analytics.startTrackerWithId('UA-61041772-3');
-			analytics.setUserId(uuid);
-		}
+		// 	analytics.debugMode();
+		// 	analytics.startTrackerWithId('UA-61041772-3');
+		// 	analytics.setUserId(uuid);
+		// }
 
 	});
 
@@ -83,26 +83,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic-t
 	})
 
 	
-
-
-	// .state('app.life_journal', {
-	// 	url: '/life_journal',
-	// 	views: {
-	// 		'menuContent': {
-	// 			templateUrl: 'templates/life_journal.html'
-	// 		}
-	// 	}
-	// })
-
-	// .state('app.reading', {
-	// 	url: '/life_journal/:id',
-	// 	views: {
-	// 		'menuContent': {
-	// 			templateUrl: 'templates/reading.html',
-	// 			controller: 'ReadingCtrl'
-	// 		}
-	// 	}
-	// })
 
 	.state('app.eventPage', {
 		url: '/eventPage',

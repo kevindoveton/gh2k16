@@ -2,17 +2,34 @@
 angular.module('starter').factory('dataService', function($http, $localstorage)
 {
 	//TODO: Cache - just for this session.
+	
 	var dataService = {
+		
 		async: function() {
-			var url = "http://www.adelaidecitycouncil.com/Ajax/whats_on_rss_feed";
-			var promise = $http.get(url, {cache: true}).then(function (response)
+			var items = [];
+			var promise = $.get('../../whatsOn.xml', function(data) {
+			}).then(function (response)
 			{
-				console.log(response);
-				return response.data;
+				var $xml = $(response);
+				$xml.find("item").each(function() {
+					var $this = $(this),
+			        	item = {
+							title: $this.find("image").find("title").text(),
+							description: $this.find("description").text(),
+							link: $this.find("link").text(),
+							date: $this.find("date").text(),
+							imageUrl: $this.find("image").find("url").text(),
+						}
+					items.push(item);
+				});
+				return items;
 			});
+			
+			// console.log(promise);
 			return promise;
-		}
-	};
+			}
+		};
 
 	return dataService;
+	
 })
