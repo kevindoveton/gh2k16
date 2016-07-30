@@ -456,3 +456,14 @@ input[type="text"] {
 	-ms-filter: brightness(.5);
 	filter: brightness(.5);
 }
+
+.background-item {
+	background-position:center;
+	background-size:cover;
+	background-repeat: no-repeat;
+}
+
+.item-complex .item-content, .item-radio .item-content {
+	background:rgba(238, 238, 238, 0.9);
+	color:#fff !important;
+}
