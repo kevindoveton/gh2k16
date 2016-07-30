@@ -19,6 +19,7 @@ angular.module('starter').factory('dataService', function($http, $localstorage)
 							link: $this.find("link").text(),
 							date: $this.find("date").text(),
 							imageUrl: $this.find("image").find("url").text(),
+							category: $this.find("category").text(),
 						}
 					items.push(item);
 				});
