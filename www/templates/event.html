@@ -1,13 +1,13 @@
   <ion-view view-title="Events">
-	<ion-content class="event-content" scroll="true">
-	<style>
-		.event-header {
-			background-image:url('{{data.imageUrl}}');
+
+		<style>
+		.event-page-wrapper .event-header {
+			background:url("{{data.imageUrl}}"), #41b1c2;
 			background-size:cover;
 			background-position:center;
 			background-attachment: fixed;
 		}
-		.gradient-fade-down {
+		.event-page-wrapper .gradient-fade-down {
 			height: 15vh;
 			background: linear-gradient(rgba(255,255,255,0), #fff);
 			bottom: 0;
@@ -15,47 +15,27 @@
 			width: 100%;
 			padding-top: 50vh;
 		}
-		.ng-binding {
-			padding: 5px 15px 5px 15px;
-		}
-		h1 {
-			text-align:center;
-			font-family:'Lato', sans-serif;
-			letter-spacing: 2px;
-		}
-		p {
-			text-align:justify;
-			font-family:'Lato', sans-serif;
-			letter-spacing: 1px;
-		}
-		* {
-			color:#262626;
-		}
-		a {
-			text-align:center;
-			background:#262626;
-			color:#fff;
-			text-decoration:none;
-			display:block;
-			padding:12px;
-			text-transform: uppercase;
-			letter-spacing: 3px;
-			padding-left:3px;
-		}
-	</style>
-		<div class='event-header'>
-			<div class='gradient-fade-down'></div>
-		</div>
-		<h1>{{data.title}}</h1>
-		<p>{{data.description}}</p>
-		<p>{{data.date}}</p>
-		<!-- <p>{{data.imageUrl}}</p> -->
-		<center><a href='{{data.link}}'>More information</a></center>
-		<!-- <p>{{data.category}}</p> -->
-		
-		<!-- <p>Weather</p> -->
+		</style>
 
+
+
+	<ion-content class="event-content" scroll="true">
+		<div class='event-page-wrapper'>
+			<div class='event-header' >
+				<div class='gradient-fade-down'></div>
+			</div>
+			<h1>{{data.title}}</h1>
+			<p>{{data.description}}</p>
+			<p>{{data.date}}</p>
+			<!-- <p>{{data.imageUrl}}</p> -->
+			<center><a href='{{data.link}}'>More information</a></center>
+			<!-- <p>{{data.category}}</p> -->
+			
+			<!-- <p>Weather</p> -->
+		</div>
 
 		<h2>{{dateFormat}}</h2>
+
 	</ion-content>
 </ion-view>
+
