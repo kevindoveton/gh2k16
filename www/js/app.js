@@ -82,14 +82,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic-t
 		controller: 'AppCtrl'
 	})
 
-	
-
-	.state('app.eventPage', {
-		url: '/eventPage',
+	.state('app.event', {
+		url: '/event/:id',
 		views: {
 			'menuContent': {
-				templateUrl: 'templates/eventPage.html',
-				controller: 'EventPageCtrl'
+				templateUrl: 'templates/event.html',
+				controller: 'EventCtrl'
 			}
 		}
 	})
