@@ -8,7 +8,7 @@ angular.module('starter').factory('dataService', function($http, $localstorage)
 		async: function() {
 			var items = [];
 			
-			var promise = $http.get('https://www.familycentre.org.au/cfcapp/?q=https://www.familycentre.org.au/cfcapp/whatsOn.xml').then(function (response)
+			var promise = $http.get('https://www.familycentre.org.au/cfcapp/?q=https://www.familycentre.org.au/cfcapp/whatsOn.xml', {cache: true}).then(function (response)
 			{
 				var $xml = $($.parseXML(response.data));
 				// console.log($xml);
@@ -46,7 +46,7 @@ angular.module('starter').factory('weatherService', function($http, $localstorag
 		
 		async: function() {
 			var items = [];
-			var promise = $http.get('https://www.familycentre.org.au/cfcapp/?q=ftp://ftp.bom.gov.au/anon/gen/fwo/IDS10034.xml').then(function (response)
+			var promise = $http.get('https://www.familycentre.org.au/cfcapp/?q=ftp://ftp.bom.gov.au/anon/gen/fwo/IDS10034.xml', {cache: true}).then(function (response)
 			{
 				
 					var x2js = new X2JS();
@@ -76,4 +76,55 @@ angular.module('starter').factory('weatherService', function($http, $localstorag
 
 	
 	
+})
+
+angular.module('starter').factory('parkingService', function($http, $localstorage)
+{
+	//TODO: Cache - just for this session.
+	
+	var parkingService = {
+		
+		download: function(url) {
+			var items = [];
+			
+			var item = [];
+			var promise = $http.get(url).then(function (response)
+			{
+				var x2js = new X2JS();
+				var data = JSON.parse(JSON.stringify(x2js.xml_str2json(response.data)));
+				var d = data['Report']['table1']['CarparkName_Collection']['CarparkName'];
+				var item = {
+					carpark: d['_Textbox31'],
+					spaces: d['_Textbox32'],
+				};
+				
+				return item;
+
+					
+			});
+			return promise;
+		},
+
+		async: function() {
+			var items = [];
+			var urls = [
+				'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Central%20Market.xml',
+				'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Frome.xml',
+				// 'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Gawler%20Place.xml',
+				// 'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Grote%20Street.xml',
+				// 'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Light%20Square.xml',
+				// 'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Pirie-Flinders.xml',
+				// 'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Rundle%20Street.xml',
+				// 'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Topham%20Mall.xml',
+				// 'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Wyatt%20Street.xml'
+			]
+			var item = (parkingService.download(urls[0]));
+			return item;
+		}
+			
+	};
+
+
+	return parkingService;
+
 })

@@ -1,7 +1,7 @@
 /*===========   Home    ===========*/
 // TODO:
 // Load Background Image
-angular.module('starter.controllers').controller('HomeCtrl', function($ionicPlatform, $http, $scope, $rootScope, $state, dataService, $localstorage, $window, weatherService) { 
+angular.module('starter.controllers').controller('HomeCtrl', function($ionicPlatform, $http, $scope, $rootScope, $state, dataService, $localstorage, $window, weatherService, parkingService) { 
 	dataService.async().then(function(d) {
 		$scope.data = d;
 		$scope.apply;
@@ -11,6 +11,13 @@ angular.module('starter.controllers').controller('HomeCtrl', function($ionicPlat
 		// $scope.data = d;
 		// $scope.apply;
 	});
+
+	// parkingService.async.then(function(d) {
+	// 	// $scope.data = d;
+	// 	// $scope.apply;
+	// 	// console.log(d);
+	// });
+	// console.log(parkingService.async());
 
 	
 
