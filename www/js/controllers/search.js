@@ -11,7 +11,7 @@ angular.module('starter.controllers').controller('SearchCtrl', function($ionicPl
 	dataService.async().then(function(d) {
 		var categoryData = [];
 		for (var i = 0; i < d.length; i++) {
-			if (d[i].category.includes($stateParams.name) || d[i].title.includes($stateParams.name)) {
+			if (d[i].category.toLowerCase().includes($stateParams.name) || d[i].title.toLowerCase().includes($stateParams.name)) {
 				id = {id: i};
 				
 				var data = merge_options(d[i], id, data);
