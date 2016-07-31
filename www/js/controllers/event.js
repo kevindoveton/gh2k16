@@ -22,7 +22,7 @@ angular.module('starter.controllers').controller('EventCtrl', function($ionicPla
 				if (weatherDate === eventDate)
 				{
 					weatherPrecis = arrayItem['precis'];
-					weatherTemp = arrayItem['maxTemp'];
+					weatherTemp = arrayItem['maxTemp'] + "°";
 				}
 		});
 		$scope.weatherPrecis = weatherPrecis;

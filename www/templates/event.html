@@ -27,16 +27,29 @@
 			</div>
 			<h1 ng-bind-html="data.title"></h1>
 			<p ng-bind-html="data.description"></p>
-			<p ng-bind-html="date"></p>
 			<!-- <p>{{data.imageUrl}}</p> -->
 			
-				<a href='{{data.link}}'>More information</a>
+				
 
 			<!-- <p>{{data.category}}</p> -->
+
+			<table style='margin:15px; border:1px solid #ddd; background:#ccc;'>
+				<tr style='border-bottom:1px solid #ddd;'>
+					<td align='right'><b>When:</b></td>
+					<td align='left'><p ng-bind-html="date"></p></td>
+				</tr>
+				<tr>
+					<td align='right'><b>weather:</b></td>
+					<td align='left'>
+						<p style='padding: 5px 15px 0px 15px;' id='temperatureDeg'>{{weatherTemp}}</p>
+						<p ng-bind="weatherPrecis"></p>
+					</td>
+				</tr>
+			</table>
 			
-			<p>Weather</p>
-			<p ng-bind="weatherPrecis"></p>
-			<p id='temperatureDeg'>{{weatherTemp}} Degrees</p>
+			
+
+			<a href='{{data.link}}'>More information</a>
 		</div>
 
 	</ion-content>
