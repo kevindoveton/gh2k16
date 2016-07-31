@@ -12,11 +12,11 @@ angular.module('starter.controllers').controller('HomeCtrl', function($ionicPlat
 		// $scope.apply;
 	});
 
-	// parkingService.async.then(function(d) {
-	// 	// $scope.data = d;
+	parkingService.async.then(function(d) {
+		// $scope.data = d;
 	// 	// $scope.apply;
 	// 	// console.log(d);
-	// });
+	});
 	// console.log(parkingService.async());
 
 	
