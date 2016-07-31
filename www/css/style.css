@@ -225,7 +225,7 @@ h3 {
 input[type="text"] {
 	color:#A5A5A5;
 	font-style: italic;
-	width:80%;
+	width:100%;
 	margin-top: -10px;
 }
 ::-webkit-input-placeholder {

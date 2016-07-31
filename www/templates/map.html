@@ -3,11 +3,11 @@
         <span style="letter-spacing:5px; margin-left:5px; font-weight:bold; text-transform:uppercase; font-family:'Lato', sans-serif; font-size:12px;">parking</span>
      </ion-nav-title>
 	<ion-content class="home-content">
-
+		<center><img src="../img/upark-logo.png" align='center' width="60%"></center>
 		<ion-item menu-close class="borderless background-item" ng-repeat="d in items" href="" style="background-image:url('{{d.imageUrl}}') !important;">
 			<div class='category-link' style='padding:30px;'>
 				<h2>{{d.carpark}}</h2>
-				<h3>{{d.spaces}}</h3>
+				<h3>{{d.spaces}} available</h3>
 			</div>
 		</ion-item>
 		
