@@ -47,17 +47,23 @@ angular.module('starter').factory('weatherService', function($http, $localstorag
 		async: function() {
 			var items = [];
 			
-			var promise = $http.get('https://www.familycentre.org.au/cfcapp/?q=ftp://ftp.bom.gov.au/anon/gen/fwo/IDS10034.xml', {cache: true}).then(function (response)
+			var promise = $http.get('https://www.familycentre.org.au/cfcapp/weather.xml', {cache: true}).then(function (response)
 			{
 				
 				var x2js = new X2JS();
 				var data = JSON.parse(JSON.stringify(x2js.xml_str2json(response.data)));
-				
-				data.product.forecast.area[3]['forecast-period'].forEach( function (arrayItem)
+				// console.log(data.product.forecast.area[2]);
+				data.product.forecast.area[2]['forecast-period'].forEach( function (arrayItem)
 				{
+					// console.log(arrayItem);
+					var temp = '';
+					if (arrayItem['element'][3] !== undefined)
+					{
+						temp = arrayItem['element'][3]['__text'];
+					}
 					var item = {
 						date: arrayItem['_start-time-local'],
-						maxTemp: arrayItem['element'][0]['__text'],
+						maxTemp: temp,
 						precis: arrayItem['text'][0]['__text'],
 					};
 					// console.log(item);

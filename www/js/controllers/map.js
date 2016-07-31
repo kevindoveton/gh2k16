@@ -1,4 +1,4 @@
-angular.module('starter.controllers').controller('MapCtrl', function($ionicPlatform,$scope, $rootScope, $state, dataService, weatherService, $localstorage, $stateParams) {
+angular.module('starter.controllers').controller('MapCtrl', function($ionicPlatform,$scope, $rootScope, $state, dataService, parkingService, $localstorage, $stateParams) {
 
 	
 	// dataService.async().then(function(d) {
@@ -29,13 +29,29 @@ angular.module('starter.controllers').controller('MapCtrl', function($ionicPlatf
 	// 	$scope.weatherTemp = weatherTemp;
 	// });
 
-	// var items = [];
-	// parkingService.async('http://opendata.adelaidecitycouncil.com/upark/UPark Space Availability by Carpark - Central Market.xml').then(function(d) {
-	// // 	// $scope.data = d;
-	// // // 	// $scope.apply;
-	// 	items.push(d);
-	// });
-	// $scope.items = items;
+	var items = [];
+	var urls = [
+		'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Central%20Market.xml',
+		'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Frome.xml',
+		'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Gawler%20Place.xml',
+		'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Grote%20Street.xml',
+		'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Light%20Square.xml',
+		'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Pirie-Flinders.xml',
+		'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Rundle%20Street.xml',
+		'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Topham%20Mall.xml',
+		'http://opendata.adelaidecitycouncil.com/upark/UPark%20Space%20Availability%20by%20Carpark%20-%20Wyatt%20Street.xml'
+	];
+	for (var i = 0; i < urls.length; i++)
+	{
+
+		parkingService.async(urls[i]).then(function(d) {
+		// 	// $scope.data = d;
+		// // 	// $scope.apply;
+			items.push(d);
+		});
+	}
+	
+	$scope.items = items;
 	
 	
 

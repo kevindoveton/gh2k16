@@ -117,7 +117,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ionic-t
 		views: {
 			'menuContent': {
 			controller: 'MapCtrl',
-			templateUrl: 'templates/search.html',
+			templateUrl: 'templates/map.html',
 			}
 		}
 	})

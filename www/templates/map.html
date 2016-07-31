@@ -4,13 +4,13 @@
      </ion-nav-title>
 	<ion-content class="home-content">
 
-		<ion-item menu-close class="borderless background-item" ng-repeat="d in data | limitTo: 6" href="#/app/event/{{$index}}" style="background-image:url('{{d.imageUrl}}') !important;">
+		<ion-item menu-close class="borderless background-item" ng-repeat="d in items" href="#/app/event/{{$index}}" style="background-image:url('{{d.imageUrl}}') !important;">
 			<div class='category-link' style='padding:30px;'>
-				<h2>{{d.title}}</h2>
-				<h3>{{d.category}}</h3>
+				<h2>{{d.carpark}}</h2>
+				<h3>{{d.spaces}}</h3>
 			</div>
 		</ion-item>
 		
-		</ion-item>
+
 	</ion-content>
 </ion-view>
