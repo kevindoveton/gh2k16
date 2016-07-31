@@ -1,0 +1,16 @@
+<ion-view>    
+     <ion-nav-title>
+        <span style="letter-spacing:5px; margin-left:5px; font-weight:bold; text-transform:uppercase; font-family:'Lato', sans-serif; font-size:12px;">newest</span>
+     </ion-nav-title>
+	<ion-content class="home-content">
+
+		<ion-item menu-close class="borderless background-item" ng-repeat="d in data | limitTo: 6" href="#/app/event/{{$index}}" style="background-image:url('{{d.imageUrl}}') !important;">
+			<div class='category-link' style='padding:30px;'>
+				<h2>{{d.title}}</h2>
+				<h3>{{d.category}}</h3>
+			</div>
+		</ion-item>
+		
+		</ion-item>
+	</ion-content>
+</ion-view>

@@ -84,9 +84,9 @@ angular.module('starter').factory('parkingService', function($http, $localstorag
 	
 	var parkingService = {
 		
-		async: function() {
+		async: function(url) {
 			var items = [];
-			var url = 'opendata.adelaidecitycouncil.com/upark/UPark Space Availability by Carpark - Central Market.xml';
+			// var url = 'http://opendata.adelaidecitycouncil.com/upark/UPark Space Availability by Carpark - Central Market.xml';
 			var promise = $http.get(url).then(function (response)
 			{
 				var x2js = new X2JS();
@@ -97,7 +97,7 @@ angular.module('starter').factory('parkingService', function($http, $localstorag
 					spaces: d['_Textbox32'],
 				};
 				items.push(item);
-				return items;
+				return item;
 
 					
 			});
@@ -105,6 +105,7 @@ angular.module('starter').factory('parkingService', function($http, $localstorag
 			return promise;
 			
 		}
+	
 	};
 
 
